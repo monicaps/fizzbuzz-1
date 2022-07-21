@@ -6,5 +6,10 @@ describe("Tests para ExplorerService", () => {
         const explorersInNode = ExplorerService.filterByMission(explorers, "node");
         expect(explorersInNode.length).toBe(1);
     });
+    test("Requerimiento 5: Regresar todos los explorers con javascript en su stack", () => {
+        const explorers = [{name: "Woopa1",githubUsername: "ajolonauta1",score: 1,mission: "node",stacks: ["javascript","reasonML","elm"]}];
+        const explorersJavaScript = ExplorerService.getExplorersByStack(explorers, "javascript");
+        expect(explorersJavaScript).toBeDefined();
+    });
 
 });
